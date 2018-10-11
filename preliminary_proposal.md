@@ -20,7 +20,7 @@ I would like to have a web app to be used by friends in the legal industry. My m
 ### Next Step
 My next step is to construct an SQL query to collect the data I will need from Google Big Query. I will also need to collect additional data from the USPTO office action data bases.
 
-———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+#
 # Art Price Prediction
 
 ### Purpose
@@ -42,7 +42,7 @@ I would present a slide show
 ### Next Step
 My next step is to gather the data and speak with experts to get a better idea on features to target for data acquisition.
 
-———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+#
 # College Football Quarterback Prediction
 
 ### Purpose
