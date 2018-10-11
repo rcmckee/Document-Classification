@@ -49,7 +49,7 @@ My next step is to gather the data and speak with experts to get a better idea o
 Predict if a high school football quarterback will perform well at the college level.
 
 ### Problem
-UT seems to have great difficulty finding a good quarterback even though the Texas high schools are noted as being a top field for recruiting. If UT could more accurately predict if a high school quarterback will perform well at the college level, maybe…maybe….they could have more wins each season.
+UT seems to have great difficulty finding a good quarterback even though the Texas high schools are noted as being a top field for recruiting. If UT could more accurately predict if a high school quarterback will perform well at the college level they could more consistently recruit high quality quarterbacks and win more games. 
 
 ### How I will present my work
 I would present a slide show or visualization.
