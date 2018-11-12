@@ -6,7 +6,7 @@ Classify patent applications by the US Patent and Trademark Office (USPTO) art u
 ### Problem
 It currently takes too long and costs too much for a patent to be classified and assigned to the correct art unit. Additionally, if patent attorneys can write the patent application with the correct wording to direct the application to one art unit over another, they can increase the likelihood of the patent being granted.
 
-**Hardest and Easiest art units as of 2016:**
+**[Hardest and Easiest art units as of 2016](http://www.ipwatchdog.com/2015/05/21/hardest-easiest-art-units/id=57864/):**
 
 ![image from ipwatchdog.com](http://www.ipwatchdog.com/wp-content/uploads/2015/05/Figure-1.png)
 ![image from ipwatchdog.com](http://www.ipwatchdog.com/wp-content/uploads/2015/05/Figure-2.png)
