@@ -1,17 +1,20 @@
 ## Patent Classification Capstone
 
 ### Purpose
-Classify patent applications by the US Patent and Trademark Office (USPTO) art unit classification. Currently this is the first step in the processing of a patent application sent to the USPTO. 135 people read each application and assign it to an art unit. The turnaround time is 28 days, and the contracting firm costs about 95 million over 5 years (this might have increased). The art unit is a unit with a technological background to understand the technology in the patent application. 
+The purpose of this project is to identify which group of people (art unit) at the US patent office (USPTO) will review a new patent application. The art unit is a group of patent examiners with the technological background to understand the technology in the patent application. Currently, this is the first step in the processing of a patent application sent to the USPTO. The USPTO sends the application to a contractor where 135 people read each application and assign it to an art unit. The turnaround time is [28 days](https://www.serco-na.com/news/press-releases/detail/2194/serco-processes-2-millionth-patent-application-for-u-s), and the USPTO pays the contractor 95 million over 5 years ([Citation](https://www.serco-na.com/news/press-releases/detail/12520/serco-awarded-95-million-patent-classification-contract)). 
 
 ### Problem
 It currently takes too long and costs too much for a patent to be classified and assigned to the correct art unit. Additionally, if patent attorneys can write the patent application with the correct wording to direct the application to one art unit over another, they can increase the likelihood of the patent being granted.
 
-**[Hardest and Easiest art units as of 2016](http://www.ipwatchdog.com/2015/05/21/hardest-easiest-art-units/id=57864/):**
+**For example**, patent applications that land in art unit 3681, which handles “transportation, construction, electronic commerce, agriculture, national security and license & review,” have about a 29.8% chance of maturing into a patent.  And even if you are lucky enough to be one of the 29.8%, it is likely to take over four years to grant.  But get your patent applications into art unit 3688, which the USPTO describes as handling the exact same subject matter as 3681, and your chances of allowance jump up to about 81%, with an average time to issuance of around 2 years ([Citation](http://www.ipwatchdog.com/2016/04/14/better-way-file-patent-applications/id=68302/)).
+
+**[The hardest and easiest art units.](http://www.ipwatchdog.com/2015/05/21/hardest-easiest-art-units/id=57864/):**
 
 ![image from ipwatchdog.com](http://www.ipwatchdog.com/wp-content/uploads/2015/05/Figure-1.png)
 ![image from ipwatchdog.com](http://www.ipwatchdog.com/wp-content/uploads/2015/05/Figure-2.png)
 
 ### Prior Solutions To This Problem
+- [LexisNexis Pathways](https://www.lexisnexisip.com/products/pathways/)
 - [Deep learning and IPC codes](file:///Users/rcm/Downloads/25866373.pdf)
 - [Title and abstract used for classification](https://patinformatics.com/machine-learning-in-patent-analytics-part-2-binary-classification-for-prioritizing-search-results/)
 - [WIPO patent applications and IPC codes](http://users.softlab.ntua.gr/facilities/public/AD/Text%20Categorization/Automated%20Categorization%20in%20the%20International%20Patent%20Classification.pdf)
@@ -20,15 +23,19 @@ It currently takes too long and costs too much for a patent to be classified and
 - [Measuring patent claim breadth using Google Patents Public Datasets](https://cloud.google.com/blog/products/ai-machine-learning/measuring-patent-claim-breadth-using-google-patents-public-datasets)
 
 ### My Approach
-I will be focusing my classification on US Patent Classification codes which are used to assign the application to an art unit in the US. Prior approaches focused on the International Patent Classification.
+I will be focusing my classification on art units of the USPTO. The use of classification codes is confusing because they must then be converted into an art unit, which is often used to describe rejection rates. Additionally, the only tools available for lawyers to utilize are behind expensive paywalls.
+
+I will first utilize a binary classification such as, does the application belong in art unit 3688 or not. I will then utilize multi-class classification which will determine which of the hundreds of art units the application belongs in. I will utilize numerous algorithms for multi-class classification, including Decision trees, SVM, KNN classifiers, and nural networks.
 
 ### Who Cares?
 The US is one of the main countries for companies to get patent protection. Because of the expense of patents (ranging from $10,000 - $40,000) it is important for inventors and attorneys to avoid obstacles like a difficult art unit which can increase the cost of the application and lead to an application not getting granted.
 
 If successful, attorneys could draft and file their applications with more confidence that it will avoid immediate rejections from the patent office.
 
+Additionally, the US Patent office could reduce costs and turnaround time by utilizing the automated model. 
+
 ### How I will present my work
-I would like to have a classification web app to be used by friends in the legal industry. My minimum viable product would be a presentation showing clusters of patent applications and the accuracy of the classification algorithms.
+I plan to have a classification web app to be used by friends in the legal industry. It would be for demonstration purposes only until I could ensure no data is recorded and no data is able to be read by anyone other than the lawyer. This is due to issues of client confidentiality and issues relating to publication date of inventions. These issues require a lot of text to explain, but the summary is: the lawyer doesn't want to risk losing their license or losing any pantent rights for their client.
 
 ### Data sources
 1) USPTO
@@ -43,5 +50,9 @@ I would like to have a classification web app to be used by friends in the legal
 - Incomplete labeling of art units: I am using USPC codes to assign missing art unit values in the data set.
 
 ### Next Step
-~~My next step is to construct an SQL query to collect the data I will need from Google Big Query. I will also need to collect additional data from the USPTO office action data bases.~~
-- Fill in missing art unit values using USPC codes.
+- Fill in missing art unit values using [USPC codes](https://www.uspto.gov/patents-application-process/patent-search/understanding-patent-classifications/patent-classification).
+- Exploratory Data Analysis (EDA) to look for issues of imbalanced classes.
+- Build and train models using Google Cloud Platform since I am acquiring the data using SQL from Google BigQuery. I will spend less time moving data between platforms like AWS so I can spend more time on the modeling.
+	- Binary Classification
+	- Multi-class Classification
+- Deploy the model as a web app
