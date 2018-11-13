@@ -15,7 +15,7 @@ It currently takes too long and costs too much for a patent to be classified and
 
 ### Prior Solutions To This Problem
 - [LexisNexis Pathways](https://www.lexisnexisip.com/products/pathways/)
-- [Deep learning and IPC codes](file:///Users/rcm/Downloads/25866373.pdf)
+- [Deep learning and IPC codes](https://www.atlantis-press.com/php/download_paper.php?id=25866373)
 - [Title and abstract used for classification](https://patinformatics.com/machine-learning-in-patent-analytics-part-2-binary-classification-for-prioritizing-search-results/)
 - [WIPO patent applications and IPC codes](http://users.softlab.ntua.gr/facilities/public/AD/Text%20Categorization/Automated%20Categorization%20in%20the%20International%20Patent%20Classification.pdf)
 - [Automated Patent Categorization and Guided Patent Search using IPC as Inspired by MeSH and PubMed](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3632996/)
