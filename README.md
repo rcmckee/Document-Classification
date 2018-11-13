@@ -27,6 +27,9 @@ I will be focusing my classification on art units of the USPTO. The use of class
 
 I will first utilize a binary classification such as, does the application belong in art unit 3688 or not. I will then utilize multi-class classification which will determine which of the hundreds of art units the application belongs in. I will utilize numerous algorithms for multi-class classification, including Decision trees, SVM, KNN classifiers, and nural networks.
 
+**Baseline Metric**
+To determine if the model is an improvement over the current solutions I will use two sources as a range for accuracy. On the high end of the range is the [97% accuracy](https://www.serco-na.com/news/press-releases/detail/2194/serco-processes-2-millionth-patent-application-for-u-s) stated by the contracting firm that currently classifies the patent applications. On the low end I will use an estimate by a patent attorney who estimates that the contractor correctly classifies patent applications [90%](http://www.ipwatchdog.com/2014/03/11/when-uspto-classifies-an-application-incorrectly/id=48457/) of the time.
+
 ### Who Cares?
 The US is one of the main countries for companies to get patent protection. Because of the expense of patents (ranging from $10,000 - $40,000) it is important for inventors and attorneys to avoid obstacles like a difficult art unit which can increase the cost of the application and lead to an application not getting granted.
 
