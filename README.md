@@ -13,6 +13,11 @@ It currently takes too long and costs too much for a patent to be classified and
 ![image from ipwatchdog.com](http://www.ipwatchdog.com/wp-content/uploads/2015/05/Figure-1.png)
 ![image from ipwatchdog.com](http://www.ipwatchdog.com/wp-content/uploads/2015/05/Figure-2.png)
 
+**Alice case law is a major factor preventing software related patents**
+Alice Corporation Pty. Ltd. v. CLS Bank International, 573 U.S. ___ (2014) is a case that essentially said any patent that relates to performing an economic activity on a computer is possibly an abstract idea and not patentable. Avoiding Alice rejections is a big concern for patent attorneys. Once you receive an Alice rejection you are less likely to get the patent granted.
+
+**[Art units with most Alice rejections](http://www.ipwatchdog.com/wp-content/uploads/2015/12/Figure-1.jpg)
+
 ### Prior Solutions To This Problem
 - [LexisNexis Pathways](https://www.lexisnexisip.com/products/pathways/)
 - [Deep learning and IPC codes](https://www.atlantis-press.com/php/download_paper.php?id=25866373)
@@ -25,7 +30,7 @@ It currently takes too long and costs too much for a patent to be classified and
 ### My Approach
 I will be focusing my classification on art units of the USPTO. The use of classification codes is confusing because they must then be converted into an art unit, which is often used to describe rejection rates. Additionally, the only tools available for lawyers to utilize are behind expensive paywalls.
 
-I will first utilize a binary classification such as, does the application belong in art unit 3688 or not. I will then utilize multi-class classification which will determine which of the hundreds of art units the application belongs in. I will utilize numerous algorithms for multi-class classification, including Decision trees, SVM, KNN classifiers, and nural networks.
+I will first utilize a binary classification such as, does the application belong in art unit 2100 or not. I will then utilize multi-class classification which will determine which of the hundreds of art units the application belongs in. I will utilize numerous algorithms for multi-class classification, including Decision trees, SVM, KNN classifiers, and nural networks.
 
 **Baseline Metric**
 To determine if the model is an improvement over the current solutions I will use two sources as a range for accuracy. On the high end of the range is the [97% accuracy](https://www.serco-na.com/news/press-releases/detail/2194/serco-processes-2-millionth-patent-application-for-u-s) stated by the contracting firm that currently classifies the patent applications. On the low end I will use an estimate by a patent attorney who estimates that the contractor correctly classifies patent applications [90%](http://www.ipwatchdog.com/2014/03/11/when-uspto-classifies-an-application-incorrectly/id=48457/) of the time.
@@ -38,7 +43,7 @@ If successful, attorneys could draft and file their applications with more confi
 Additionally, the US Patent office could reduce costs and turnaround time by utilizing the automated model. 
 
 ### How I will present my work
-I plan to have a classification web app to be used by friends in the legal industry. It would be for demonstration purposes only until I could ensure no data is recorded and no data is able to be read by anyone other than the lawyer. This is due to issues of client confidentiality and issues relating to publication date of inventions. These issues require a lot of text to explain, but the summary is: the lawyer doesn't want to risk losing their license or losing any pantent rights for their client.
+I plan to have a classification web app to be used by friends in the legal industry. Visualizations may include word clouds showing the important words in different classes to give information as to what to include to ensure the patent application gets to the art unit the patent attorney wants. It would be for demonstration purposes only until I could ensure no data is recorded and no data is able to be read by anyone other than the lawyer. This is due to issues of client confidentiality and issues relating to publication date of inventions. These issues require a lot of text to explain, but the summary is: the lawyer doesn't want to risk losing their license or losing any pantent rights for their client.
 
 ### Data sources
 1) USPTO
@@ -50,12 +55,12 @@ I plan to have a classification web app to be used by friends in the legal indus
 	- SQL table (28gb and 1.4tb)
 	
 ### Potential Problems
-- Incomplete labeling of art units: I am using USPC codes to assign missing art unit values in the data set.
+- Incomplete labeling of art units: I am using USPC codes to assign missing art unit values in the data set. There are hundreds of codes and labels to assign. This could take up a large amount of time.
 
 ### Next Step
-- Fill in missing art unit values using [USPC codes](https://www.uspto.gov/patents-application-process/patent-search/understanding-patent-classifications/patent-classification).
+- Fill in missing art unit values for 3600 and 2100 art units using [USPC codes](https://www.uspto.gov/patents-application-process/patent-search/understanding-patent-classifications/patent-classification).
 - Exploratory Data Analysis (EDA) to look for issues of imbalanced classes.
 - Build and train models using Google Cloud Platform since I am acquiring the data using SQL from Google BigQuery. I will spend less time moving data between platforms like AWS so I can spend more time on the modeling.
-	- Binary Classification
-	- Multi-class Classification
+	- Binary Classification: is it 2100 or not?
+	- Multi-class Classification: is it 2121, 2129, 3689, 3622, 3629, and other art units in the 3600 range.
 - Deploy the model as a web app
