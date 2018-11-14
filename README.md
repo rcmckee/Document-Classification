@@ -16,7 +16,9 @@ It currently takes too long and costs too much for a patent to be classified and
 **Alice case law is a major factor preventing software related patents**
 Alice Corporation Pty. Ltd. v. CLS Bank International, 573 U.S. ___ (2014) is a case that essentially said any patent that relates to performing an economic activity on a computer is possibly an abstract idea and not patentable. Avoiding Alice rejections is a big concern for patent attorneys. Once you receive an Alice rejection you are less likely to get the patent granted.
 
-**[Art units with most Alice rejections](http://www.ipwatchdog.com/wp-content/uploads/2015/12/Figure-1.jpg)
+[**Art units with most Alice rejections**](http://www.ipwatchdog.com/2015/12/14/the-most-likely-art-units-for-alice-rejections/id=63829/)
+
+![image from ipwatchdog.com](http://www.ipwatchdog.com/wp-content/uploads/2015/12/Figure-1.jpg)
 
 ### Prior Solutions To This Problem
 - [LexisNexis Pathways](https://www.lexisnexisip.com/products/pathways/)
