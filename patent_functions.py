@@ -22,8 +22,9 @@ def print_artUnit_uspcClass(art_unit_list, uspc_class):
     prints the art unit or uspc class and the number of times it appears.
 
     exampl:
-    art_unit_list_3600 = [3622,3623,3623,3625,3625,3626,3627,3627,3627,3628,3628,3628,3628,3629,3629,3685,3685,3685,3685,3689,3689,3689,3689,3693,3693, 3693]
-    print_artUnit_uspcClass(art_unit_list_3600, '705')
+    art_unit_list_for_706 = [2121, 2129]
+    art_unit_list_for_705 = [3622,3623,3623,3625,3625,3626,3627,3627,3627,3628,3628,3628,3628,3629,3629,3685,3685,3685,3685,3689,3689,3689,3689,3693,3693, 3693]
+    print_artUnit_uspcClass(art_unit_list_for_705, '705')
 
     example output:
     ...more art units printed but depricated view here for ease of reading...
@@ -40,3 +41,7 @@ def print_artUnit_uspcClass(art_unit_list, uspc_class):
     print('{0}: {1}'.format(uspc_class, len(df_oa[df_oa['uspc_class'] == uspc_class])))
     print(artUnitCount-len(df_oa[df_oa['uspc_class'] == uspc_class]))
     
+
+
+#drop duplicates
+#df_oa_2015_start['app_id'].value_counts(dropna=False)
