@@ -43,4 +43,27 @@ def print_artUnit_uspcClass(art_unit_list, uspc_class):
     print('{0}: {1}'.format(uspc_class, len(df_oa[df_oa['uspc_class'] == uspc_class])))
     print(artUnitCount-len(df_oa[df_oa['uspc_class'] == uspc_class]))
     
+def df_with_class_705_706(dataframe, column_in_quotes):
+    '''
+    Input:
+            dataframe: name of dataframe that has main codes 705 and 706. (does not accomodate codes that are less than 3 letters)
+            column: name of column where the main uspc code can be found.
+    Output:
+            Creates new dataframe df_705_706 with rows that contain 705 and 706 in the main USPC classification
+    Example:
+            find_class_705_706(df,'code')
+    '''
+    df_705_706 = dataframe[(dataframe[column_in_quotes] == '706') | (dataframe[column_in_quotes] == '705')]
 
+def strip_class(dataframe, column_in_quotes):
+    '''
+    Input:
+            dataframe: name of dataframe that has main codes 705 and 706. (does not accomodate codes that are less than 3 letters)
+            column: name of column where the main uspc code can be found.
+    Output:
+            none
+            Changes the column to only show the 3 letter code of 705 and 706
+    Example:
+            strip_class(df, 'code')
+    '''
+    dataframe[column_in_quotes] = [x[:3] for x in dataframe[column_in_quotes]]
