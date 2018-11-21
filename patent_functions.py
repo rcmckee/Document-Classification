@@ -80,3 +80,47 @@ def strip_class(dataframe, column_in_quotes):
             strip_class(df, 'code')
     '''
     dataframe[column_in_quotes] = [x[:3] for x in dataframe[column_in_quotes]]
+
+def remove_string(dataframe,column_list,string_in_quotes):
+    '''
+    Input:
+            dataframe: name of pandas dataframe
+            column_list: list of column name strings (ex. ['col_1','col_2'])
+            string_in_quotes: string to remove in quotes (ex. ',')
+    
+    Output:
+            none
+            modifies pandas dataframe to remove string.
+                
+    Example:
+            remove_string(df, ['col_1','col_2'], ',')
+    
+    Warning:
+            If memory issues occur, limit to one column at a time.
+        
+    '''
+    for i in column_list:
+        dataframe[i] = dataframe[i].str.replace(string_in_quotes,"").astype(str)
+
+def clean_csv_for_spark(file_name, column_list):
+        '''
+        Input:
+            file_name: name of csv file
+            column_list: list of column name in string format (ex. ['col_1','col_2'])
+            string_in_quotes: string to remove in quotes (ex. ',')
+    
+        Output:
+                new csv file with commas removed except for commas for dilimiting breaks 
+                modifies pandas dataframe to remove string.
+                        
+        Example:
+                clean_csv_for_spark(df, ['col_1','col_2'])
+        '''
+        df = pd.read_csv('{0}'.format(file_name))
+        df.drop('Unnamed: 0',axis=1, inplace=True)
+        df.head()
+
+        for i in column_list:
+                remove_string(df, [i], ',')
+        
+        df.to_csv('{0}_nocommas.csv'.format(file_name))
