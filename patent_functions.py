@@ -121,7 +121,10 @@ def check_remove_target_from_input(dataframe,column_list, uspc_class_list):
                 
         '''
         for i in column_list:
-                pass
+              for c in uspc_class_list:  
+                if c in dataframe[i] == True:
+                        dataframe[i].str.replace(c,"").astype(str)
+        
 
 def optimize_mem_of_column_types(data_frame, target_column_in_quotes):
         '''
