@@ -102,6 +102,37 @@ def remove_string(dataframe,column_list,string_in_quotes):
     for i in column_list:
         dataframe[i] = dataframe[i].str.replace(string_in_quotes,"").astype(str)
 
+def check_remove_target_from_input(dataframe,column_list, uspc_class_list):
+        '''
+        Input:
+                dataframe: name of pandas dataframe
+                column_list: list of column name strings (ex. ['col_1','col_2'])
+                uspc_class_list: list of target uspc codes to check for and remove in (ex. ['705','706'])
+        
+        Output:
+                none
+                modifies pandas dataframe to remove uspc code if it is in one of the input columns.
+                        
+        Example:
+                check_remove_target_from_input(df, ['col_1','col_2'], ['705','706'])
+        
+        Warning:
+                If memory issues occur, limit to one column at a time.
+                
+        '''
+        for i in column_list:
+                pass
+
+def optimize_mem_of_column_types(data_frame, target_column_in_quotes):
+        '''
+        Input:
+                dataframe: name of pandas dataframe
+                column_list: list of column name strings (ex. ['col_1','col_2'])
+                target_column_in_quotes: that has code for classification (ex. 'code')
+
+        '''
+        data_frame[target_column_in_quotes] = data_frame[target_column_in_quotes].astype('category')
+
 def clean_csv_for_spark(file_name, column_list):
         '''
         Input:
