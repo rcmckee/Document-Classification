@@ -126,13 +126,16 @@ def check_remove_target_from_input(dataframe,column_list, uspc_class_list):
                         dataframe[i].str.replace(c,"").astype(str)
         
 
-def optimize_mem_of_column_types(data_frame, target_column_in_quotes):
+def optimize_mem_target_to_categoryType(data_frame, target_column_in_quotes):
         '''
         Input:
-                dataframe: name of pandas dataframe
-                column_list: list of column name strings (ex. ['col_1','col_2'])
-                target_column_in_quotes: that has code for classification (ex. 'code')
-
+            dataframe: name of dataframe
+            target_column_in_quotes: name of column to change any label value to category to reduce memory size.
+        Output:
+                none
+                Changes any values in column that are not a category into a category dtype.
+        Example:
+                column_values_to_string(df, 'code')
         '''
         data_frame[target_column_in_quotes] = data_frame[target_column_in_quotes].astype('category')
 
