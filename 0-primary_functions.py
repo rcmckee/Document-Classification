@@ -113,3 +113,15 @@ fig = exp.as_pyplot_figure()
 #show prediction probability for classes and show highlighted text
 exp.show_in_notebook(text=True)
 
+#confusion matrix
+y_pred = c.predict(X_test)
+confusion_matrix(y_test, y_pred)
+
+unique, counts = np.unique(y_pred, return_counts=True)
+print(np.asarray((unique, counts)).T)
+
+df_cm = pd.DataFrame(confusion_matrix(y_test, y_pred), index = ['True (705)', 'True (706)'])
+df_cm.columns = ['Predicted (705)', 'Predicted (706)']
+
+heatmap = sns.heatmap(df_cm, annot=True, fmt="d")
+heatmap.set_yticklabels(labels=['True (705)', 'True (706)'],rotation=0);
