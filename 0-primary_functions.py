@@ -22,6 +22,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_curve, auc, f1_score, recall_score, precision_score
 from sklearn.pipeline import make_pipeline
 from lime.lime_text import LimeTextExplainer
+import re
 
 %matplotlib inline
 %config InlineBackend.figure_format='retina'
@@ -30,6 +31,17 @@ from lime.lime_text import LimeTextExplainer
 df = pd.read_csv('small_descr_clm_code.csv')
 df.drop('Unnamed: 0',axis=1, inplace=True)
 df.head()
+
+# vectorized method is faster than apply and map
+descr_series = df['descr']
+descr_series = descr_series.str.replace('^\s +Description\s*|\s\sdetailed\sdescription.*','', case=None, flags=re.IGNORECASE|re.DOTALL, regex=True)
+#### OR when used on Amazon SageMaker #####
+#descr_series = descr_series.str.replace('^\s +Description\s*|\s\sdetailed\sdescription.*','', flags=re.IGNORECASE|re.DOTALL)
+
+
+df['descr'] = descr_series
+
+#### OR when used on Amazon SageMaker
 
 # remove commas while it is in pandas dataframe so you can move it to pyspark dataframe
 def remove_string(dataframe,column_list,string_in_quotes):
