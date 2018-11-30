@@ -167,19 +167,3 @@ from lime.lime_text import LimeTextExplainer
 from lime import lime_text
 from sklearn.pipeline import make_pipeline
 
-df lime_viz( ,idx):
-
-        ## see notebook
-        c = make_pipeline(vectorizer, rf)
-        print(c.predict_proba([X_test.iloc[0]]))
-        class_names = ['705','706']
-        explainer = LimeTextExplainer(class_names=class_names)
-        exp = explainer.explain_instance(X_test.iloc[idx], c.predict_proba, num_features=6)
-        print('Document id: %d' % idx)
-        print('Probability(706) =', c.predict_proba([X_test.iloc[idx]])[0,1])
-        print('True class: %s' % y_test.iloc[idx])
-        exp.as_list()
-        fig = exp.as_pyplot_figure()
-        exp.show_in_notebook(text=False)
-        exp.save_to_file('/tmp/oi_claim.html')
-        exp.show_in_notebook(text=True)
