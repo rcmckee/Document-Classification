@@ -1,5 +1,8 @@
 ## Patent Classification Capstone
 
+### Final Notebook and model can be found in [Patent_Classification.ipynb](https://github.com/rcmckee/dsi-Capstone/blob/master/Patent_Classification.ipynb)
+Also available as a [google colab notebook](https://colab.research.google.com/github/rcmckee/dsi-Capstone/blob/master/Patent_Classification.ipynb)
+
 ### Purpose
 The purpose of this project is to identify which group of people (art unit) at the US patent office (USPTO) will review a new patent application. The art unit is a group of patent examiners with the technological background to understand the technology in the patent application. Currently, this is the first step in the processing of a patent application sent to the USPTO. The USPTO sends the application to a contractor where 135 people read each application and assign it to an art unit. The turnaround time is [28 days](https://www.serco-na.com/news/press-releases/detail/2194/serco-processes-2-millionth-patent-application-for-u-s), and the USPTO pays the contractor 95 million over 5 years ([Citation](https://www.serco-na.com/news/press-releases/detail/12520/serco-awarded-95-million-patent-classification-contract)). 
 
